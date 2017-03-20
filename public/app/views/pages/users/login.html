@@ -1,30 +1,39 @@
 <div class="page-header">
-	<h1>User Login</h1>
+		<h1>User Login</h1>
 </div>
 
-<form ng-submit="register.regUser();"> 
-  <label>pno</label>
-  <input class="form-control" type="text" name="usernum" placeholder="please enter your phone no." ng-model="register.regData.usernum">
-  <br>
-  <label>Password</label>
-  <input class="form-control" type="password" name="password" placeholder="password please" ng-model="register.regData.password">
-<br>
-<br>
-  <button class="btn btn-primary" type="submit">Login</button>
+
+
+<form ng-submit="main.dologin( loginData);">
+	<label>Username</label>
+	<input class="form-control" type="text" name="username" placeholder="please enter your Username" ng-model="main.loginData.username">
+	<br>
+	<label>password</label>
+	<input class="form-control" type="password" name="password" placeholder="please enter your password" ng-model="main.loginData.password">
+	<br>
+	<button class="btn btn-primary" type="submit">Login</button>&nbsp
+	<button type="button" class="btn btn-success" ng-click="main.facebook();">Facebook </button>
+
 </form>
-<br><br>
+
+<br>
 
 <div class="jumbotron text-center" ng-show="register.loading">
-		<span class="glyphicon glyphicon-repeat spinner"></span>
-		<p> Loading ...</p>
-
-</div>
-
-
-<div class="row " ng-show='register.successMsg'>
-	<div class="alert alert-success">  {{register.successMsg}} </div>
+	<span class="glyphicon glyphicon-repeat spinner"></span>
+	<p>Loading ...</p>
 </div>
 <br>
-<div class="row"  ng-show='register.errorMsg'>
-	<div class="alert alert-danger">  {{register.errorMsg}} </div>
+
+<div class="row show-hide-message" ng-show="register.successMsg">
+	<div class="alert alert-sucess">{{main.successMsg}}</div>
+</div>
+
+<br>
+
+<div class="row show-hide-message" ng-show="register.errorsMsg">
+	<div class="alert alert-danger">{{main.errorMsg}}</div>
+</div>
+
+<div class="row show-hide-message" ng-show="facebook.errorsMsg">
+	<div class="alert alert-danger">{{facebook.errorMsg}}</div>
 </div>
