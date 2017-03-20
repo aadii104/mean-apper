@@ -1,0 +1,57 @@
+<!-- Heading -->
+<div class="row text-center">
+    <div class="container">
+        <h2 class="section-heading">Contact</h2>
+        <h3 class="section-subheading text-muted">Tell us your query!!!</h3>
+    </div>
+</div>
+<!-- Heading -->
+
+<!-- Main Section -->
+<section id="contact">
+    <!-- Start of Container -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form name="sentMessage" id="" ng-submit="email.sub_email(a_email);" novalidate>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <!-- Username Input -->
+                            <div class="form-group">
+                                <label>Your name:</label>
+                                <input class="form-control" type="text" name="name" placeholder="Your name please *" ng-model="email.a_email.sub_name" autocomplete="off">
+                            </div>
+                            <!-- Password Input -->
+                            <div class="form-group">
+                                <label>Your name:</label>
+                                <input class="form-control" type="text" name="name" placeholder="Your name please *" ng-model="email.a_email.sub_Email" autocomplete="off">
+                            </div>
+                        
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Your Message *" id="" required data-validation-required-message="Please enter a message." style="resize: none;" ng-model="email.a_email.sub_msg">
+                                </textarea>
+                            </div>
+                            <button type="submit" ng-disabled="" class="btn btn-xl">Reach Us</button>
+                            
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <br>
+        <div class="jumbotron text-center" ng-show="email.loading">
+            <span class="glyphicon glyphicon-repeat spinner"></span>
+            <p>Loading....</p>
+        </div>
+         <div class="jumbotron text-center">
+            <div class="row" ng-show="email.successMsg">
+                <div class="alert alert-success">{{email.successMsg}}</div>
+            </div>
+
+            <div class="row" ng-show="email.errorMsg">
+                <div class="alert alert-danger">{{email.errorMsg}}</div>
+            </div>
+        </div>        
+    </div>
+</section>
